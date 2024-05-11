@@ -1,4 +1,5 @@
-import { IController, ICreateProductUseCase } from '@/application/interfaces'
+import { IController } from '@/application/interfaces'
+import { ICreateProductUseCase } from '@/application/interfaces/usecases/product/create-product.interface'
 import { HttpRequest, HttpResponse, success, MissingParamError, InvalidParamError, badRequest, serverError } from '@/infra/shared'
 
 export class CreateProductController implements IController {

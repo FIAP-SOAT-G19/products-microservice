@@ -1,4 +1,5 @@
-import { IController, IGetProductUseCase } from '@/application/interfaces'
+import { IController } from '@/application/interfaces'
+import { IGetProductUseCase } from '@/application/interfaces/usecases/product/get-product.interface'
 import { HttpRequest, HttpResponse, success, ProductNotFoundError, InvalidParamError, MissingParamError, badRequest, serverError } from '@/infra/shared'
 
 export class GetProductController implements IController {
