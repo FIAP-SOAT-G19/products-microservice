@@ -1,7 +1,7 @@
 import { mock } from 'jest-mock-extended'
 import { CreateProductController } from './create-product.controller'
-import { ICreateProductUseCase } from '@/application/interfaces'
 import { HttpRequest, MissingParamError, InvalidParamError, ServerError } from '@/infra/shared'
+import { ICreateProductUseCase } from '@/application/interfaces/usecases/product/create-product.interface'
 
 const createProductUseCase = mock<ICreateProductUseCase>()
 

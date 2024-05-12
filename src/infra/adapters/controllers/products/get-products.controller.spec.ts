@@ -1,7 +1,7 @@
 import { mock } from 'jest-mock-extended'
 import { GetProductsController } from './get-products.controller'
-import { IGetProductsUseCase } from '@/application/interfaces'
 import { serverError } from '@/infra/shared'
+import { IGetProductsUseCase } from '@/application/interfaces/usecases/product/get-products.interface'
 
 const getProductsUseCase = mock<IGetProductsUseCase>()
 const productsMock = [

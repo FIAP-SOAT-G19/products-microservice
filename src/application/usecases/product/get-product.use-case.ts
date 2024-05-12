@@ -1,8 +1,8 @@
 import { ISchemaValidator } from '../../interfaces/validators/schema-validator.interface'
-import { IGetProductUseCase } from '../../interfaces/usecases/product/get-product.interface'
 import { ProductNotFoundError, InvalidParamError, MissingParamError } from '@/infra/shared'
 import constants from '@/infra/shared/constants'
 import { IGetProductByIdGateway } from '@/application/interfaces/gateways/product/get-product-by-id-gateway.interface'
+import { IGetProductUseCase } from '@/application/interfaces/usecases/product/get-product.interface'
 
 export class GetProductUseCase implements IGetProductUseCase {
   constructor(
