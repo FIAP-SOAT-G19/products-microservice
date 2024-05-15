@@ -1,5 +1,5 @@
 import { IController } from '@/application/interfaces'
-import { HttpRequest, HttpResponse } from '@/infra/shared'
+import { HttpRequest, HttpResponse } from '../../../shared'
 
 export class ReadinessController implements IController {
   async execute(input: HttpRequest): Promise<HttpResponse> {

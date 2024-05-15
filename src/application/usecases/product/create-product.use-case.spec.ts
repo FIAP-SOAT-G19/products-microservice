@@ -2,7 +2,7 @@ import { ISchemaValidator } from '../../interfaces'
 import { mock } from 'jest-mock-extended'
 import { CreateProductUseCase } from './create-product.use-case'
 import MockDate from 'mockdate'
-import { MissingParamError, InvalidParamError, ServerError } from '@/infra/shared'
+import { MissingParamError, InvalidParamError, ServerError } from '../../../infra/shared'
 import { ICreateProductGateway } from '@/application/interfaces/gateways/product/create-product-gateway.interface'
 import { IUUIDGenerator } from '@/application/interfaces/usecases/uuid/uuid-generator.interface'
 

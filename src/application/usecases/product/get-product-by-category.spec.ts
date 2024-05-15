@@ -1,7 +1,7 @@
 import { ISchemaValidator } from '../../interfaces'
 import { mock } from 'jest-mock-extended'
 import { GetProductByCategoryUseCase } from './get-product-by-category'
-import { InvalidParamError, ProductNotFoundError } from '@/infra/shared'
+import { InvalidParamError, ProductNotFoundError } from '../../../infra/shared'
 import { IGetProductByCategoryGateway } from '@/application/interfaces/gateways/product/get-product-by-category.gateway.interface'
 
 describe('GetProductByCategoryUseCase', () => {

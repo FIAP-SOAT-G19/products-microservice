@@ -1,6 +1,5 @@
-
 import { IController } from '@/application/interfaces'
-import { HttpRequest, HttpResponse, handleError } from '@/infra/shared'
+import { HttpRequest, HttpResponse, handleError } from '../../../shared'
 import { Pool } from 'pg'
 
 export class HealthCheckController implements IController {

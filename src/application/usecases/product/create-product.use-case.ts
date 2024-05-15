@@ -1,8 +1,8 @@
 import { ICreateProductUseCase } from '../../interfaces/usecases/product/create-product.interface'
 import { IUUIDGenerator } from '../../interfaces/usecases/uuid/uuid-generator.interface'
 import { ISchemaValidator } from '../../interfaces/validators/schema-validator.interface'
-import { ServerError, MissingParamError, InvalidParamError } from '@/infra/shared'
-import constants from '@/infra/shared/constants'
+import { ServerError, MissingParamError, InvalidParamError } from '../../../infra/shared'
+import constants from '../../../infra/shared/constants'
 import { ICreateProductGateway } from '@/application/interfaces/gateways/product/create-product-gateway.interface'
 
 export class CreateProductUseCase implements ICreateProductUseCase {
