@@ -1,7 +1,7 @@
 import { IDeleteProductGateway } from '@/application/interfaces/gateways/product/delete-product-gateway.interface'
 import { ISchemaValidator } from '../../interfaces'
 import { DeleteProductUseCase } from './delete-product.use-case'
-import { InvalidParamError, MissingParamError, ServerError } from '@/infra/shared'
+import { InvalidParamError, MissingParamError, ServerError } from '../../../infra/shared'
 import { mock } from 'jest-mock-extended'
 
 describe('DeleteProductUseCase', () => {

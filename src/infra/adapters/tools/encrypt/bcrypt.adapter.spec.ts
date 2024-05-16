@@ -1,6 +1,6 @@
-import { IEncrypt } from '@/application/interfaces/usecases/encrypt/encrypt.interface'
 import bcrypt from 'bcrypt'
 import { BcryptAdapter } from './bcrypt.adapter'
+import { IEncrypt } from '@/application/interfaces/usecases/encrypt/encrypt.interface'
 
 describe('BcryptAdapter', () => {
   let sut: IEncrypt

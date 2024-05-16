@@ -1,7 +1,7 @@
 import { ISchemaValidator } from '../../interfaces/validators/schema-validator.interface'
 import { IUpdateProductUseCase } from '../../interfaces/usecases/product/update-product.interface'
-import { ServerError, MissingParamError, InvalidParamError } from '@/infra/shared'
-import constants from '@/infra/shared/constants'
+import { ServerError, MissingParamError, InvalidParamError } from '../../../infra/shared'
+import constants from '../../../infra/shared/constants'
 import { IUpdateProductGateway } from '@/application/interfaces/gateways/product/update-product-gateway.interface'
 
 export class UpdateProductUseCase implements IUpdateProductUseCase {

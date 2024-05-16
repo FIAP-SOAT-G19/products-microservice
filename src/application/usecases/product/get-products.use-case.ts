@@ -1,4 +1,4 @@
-import { ServerError } from '@/infra/shared'
+import { ServerError } from '../../../infra/shared'
 import { IGetProductsUseCase } from '../../interfaces/usecases/product/get-products.interface'
 import { IGetProductsGateway } from '@/application/interfaces/gateways/product/get-products-gateway.interface'
 

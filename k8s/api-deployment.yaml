@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: devrsilva/tech-challenge:latest
+          image: devrsilva/products-microsservice
           resources:
             limits:
               memory: "512Mi"
@@ -91,11 +91,11 @@ metadata:
   name: api-secrets
 type: Opaque
 stringData:
-  postgres-db: tech_challenge
+  postgres-db: products
   postgres-user: postgres
   postgres-password: postgres
-  postgres-host: dbpostgres.czg2ea2yu0rz.us-east-1.rds.amazonaws.com
-  database-url: postgresql://postgres:postgres@dbpostgres.czg2ea2yu0rz.us-east-1.rds.amazonaws.com:5432/dbpostgres?schema=public
+  postgres-host: products.c32kogqu0ihz.us-east-1.rds.amazonaws.com
+  database-url: postgresql://postgres:postgres@products.c32kogqu0ihz.us-east-1.rds.amazonaws.com:5432/products?schema=public
 ---
 apiVersion: v1
 kind: Service
