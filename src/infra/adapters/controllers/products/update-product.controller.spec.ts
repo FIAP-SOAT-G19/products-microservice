@@ -1,7 +1,7 @@
 import { mock } from 'jest-mock-extended'
 import { UpdateProductController } from './update-product.controller'
-import { IUpdateProductUseCase } from '@/application/interfaces'
-import { HttpRequest, MissingParamError, InvalidParamError, ProductNotFoundError, ServerError } from '@/infra/shared'
+import { HttpRequest, MissingParamError, InvalidParamError, ProductNotFoundError, ServerError } from '../../../shared'
+import { IUpdateProductUseCase } from '@/application/interfaces/usecases/product/update-product.interface'
 
 const updateProductUseCase = mock<IUpdateProductUseCase>()
 const productMock = {

@@ -91,7 +91,7 @@ metadata:
   name: api-secrets
 type: Opaque
 stringData:
-  postgres-db: tech_challenge
+  postgres-db: products
   postgres-user: postgres
   postgres-password: postgres
   postgres-host: dbpostgres.czg2ea2yu0rz.us-east-1.rds.amazonaws.com

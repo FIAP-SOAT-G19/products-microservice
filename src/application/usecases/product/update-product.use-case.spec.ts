@@ -1,7 +1,7 @@
 import { ISchemaValidator } from '../../interfaces'
 import { mock } from 'jest-mock-extended'
 import { UpdateProductUseCase } from './update-product.use-case'
-import { MissingParamError, InvalidParamError, ServerError } from '@/infra/shared'
+import { MissingParamError, InvalidParamError, ServerError } from '../../../infra/shared'
 import { IUpdateProductGateway } from '@/application/interfaces/gateways/product/update-product-gateway.interface'
 
 describe('UpdateProductUseCase', () => {

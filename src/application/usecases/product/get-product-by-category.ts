@@ -1,7 +1,7 @@
 import { ISchemaValidator } from '../../interfaces/validators/schema-validator.interface'
 import { IGetProductByCategoryUseCase } from '../../interfaces/usecases/product/get-product-by-category.interface'
-import { ProductNotFoundError, InvalidParamError } from '@/infra/shared'
-import constants from '@/infra/shared/constants'
+import { ProductNotFoundError, InvalidParamError } from '../../../infra/shared'
+import constants from '../../../infra/shared/constants'
 import { IGetProductByCategoryGateway } from '@/application/interfaces/gateways/product/get-product-by-category.gateway.interface'
 
 export class GetProductByCategoryUseCase implements IGetProductByCategoryUseCase {

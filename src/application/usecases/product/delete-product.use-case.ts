@@ -1,7 +1,7 @@
 import { ISchemaValidator } from '../../interfaces/validators/schema-validator.interface'
 import { IDeleteProductUseCase } from '../../interfaces/usecases/product/delete-product.interface'
-import { ServerError, InvalidParamError, MissingParamError } from '@/infra/shared'
-import constants from '@/infra/shared/constants'
+import { ServerError, InvalidParamError, MissingParamError } from '../../../infra/shared'
+import constants from '../../../infra/shared/constants'
 import { IDeleteProductGateway } from '@/application/interfaces/gateways/product/delete-product-gateway.interface'
 
 export class DeleteProductUseCase implements IDeleteProductUseCase {

@@ -1,5 +1,6 @@
-import { IController, IGetProductsUseCase } from '@/application/interfaces'
-import { HttpResponse, success, serverError } from '@/infra/shared'
+import { IController } from '@/application/interfaces'
+import { IGetProductsUseCase } from '@/application/interfaces/usecases/product/get-products.interface'
+import { HttpResponse, success, serverError } from '../../../shared'
 
 export class GetProductsController implements IController {
   constructor(private readonly getProductsUseCase: IGetProductsUseCase) {}

@@ -1,9 +1,8 @@
 import { IController } from '@/application/interfaces'
 import { RequestsRepository } from '@/infra/database/repositories/request.repository'
-import { HttpRequest, HttpResponse } from '@/infra/shared/types'
+import { HttpRequest, HttpResponse, obfuscateValue } from '../../../shared'
 import { Request, Response } from 'express'
 import { UUIDGeneratorAdapter } from '../uuid/uuid-generator'
-import { obfuscateValue } from '@/infra/shared'
 
 export const expressAdapter = (controller: IController) => {
   return async (req: Request, res: Response) => {

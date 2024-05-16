@@ -1,7 +1,7 @@
 import { mock } from 'jest-mock-extended'
 import { GetProductByCategoryController } from './get-product-by-category.controller'
-import { IGetProductByCategoryUseCase } from '@/application/interfaces'
-import { HttpRequest, ProductNotFoundError, InvalidParamError, serverError } from '@/infra/shared'
+import { HttpRequest, ProductNotFoundError, InvalidParamError, serverError } from '../../../shared'
+import { IGetProductByCategoryUseCase } from '@/application/interfaces/usecases/product/get-product-by-category.interface'
 
 const getProductByCategoryUseCase = mock<IGetProductByCategoryUseCase>()
 const productMock = [

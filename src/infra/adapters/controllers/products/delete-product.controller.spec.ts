@@ -1,7 +1,7 @@
 import { mock } from 'jest-mock-extended'
 import { DeleteProductController } from './delete-product.controller'
-import { IDeleteProductUseCase } from '@/application/interfaces'
-import { HttpRequest, ProductNotFoundError, InvalidParamError, MissingParamError, serverError } from '@/infra/shared'
+import { HttpRequest, ProductNotFoundError, InvalidParamError, MissingParamError, serverError } from '../../../shared'
+import { IDeleteProductUseCase } from '@/application/interfaces/usecases/product/delete-product.interface'
 
 const deleteProductUseCase = mock<IDeleteProductUseCase>()
 const deletedMock = {

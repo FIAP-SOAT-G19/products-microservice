@@ -1,5 +1,6 @@
-import { IController, IUpdateProductUseCase } from '@/application/interfaces'
-import { HttpRequest, HttpResponse, success, ProductNotFoundError, MissingParamError, InvalidParamError, badRequest, serverError } from '@/infra/shared'
+import { IController } from '@/application/interfaces'
+import { IUpdateProductUseCase } from '@/application/interfaces/usecases/product/update-product.interface'
+import { HttpRequest, HttpResponse, success, ProductNotFoundError, MissingParamError, InvalidParamError, badRequest, serverError } from '../../../shared'
 
 export class UpdateProductController implements IController {
   constructor(private readonly updateProductUseCase: IUpdateProductUseCase) {}
