@@ -1,6 +1,6 @@
 import { mock } from 'jest-mock-extended'
 import { GetProductsUseCase } from './get-products.use-case'
-import { ServerError } from '@/infra/shared'
+import { ServerError } from '../../../infra/shared'
 import { IGetProductsGateway } from '@/application/interfaces/gateways/product/get-products-gateway.interface'
 
 describe('GetProductsUseCase', () => {

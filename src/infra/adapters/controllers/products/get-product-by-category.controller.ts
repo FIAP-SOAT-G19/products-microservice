@@ -1,6 +1,6 @@
 import { IController } from '@/application/interfaces'
 import { IGetProductByCategoryUseCase } from '@/application/interfaces/usecases/product/get-product-by-category.interface'
-import { HttpRequest, HttpResponse, success, ProductNotFoundError, InvalidParamError, badRequest, serverError } from '@/infra/shared'
+import { HttpRequest, HttpResponse, success, ProductNotFoundError, InvalidParamError, badRequest, serverError } from '../../../shared'
 
 export class GetProductByCategoryController implements IController {
   constructor(private readonly getProductByCategoryUseCase: IGetProductByCategoryUseCase) {}
