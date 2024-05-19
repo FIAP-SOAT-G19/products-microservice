@@ -19,7 +19,7 @@ O **Tech Challenge** é um projeto de um sistema de autoatendimento de fast food
 - Clone o projeto
 
   ```bash
-  git clone https://github.com/FIAP-SOAT-G19/tech-challenge.git
+  git clone https://github.com/FIAP-SOAT-G19/products-microservice.git
   ````
 ---
 
@@ -28,7 +28,21 @@ Existe o arquivo `.env.example` com todas as variáveis utilizadas para rodar o 
 ---
 
 ## Arquitetura do projeto
-![Arquitetura do Projeto](./assets/images/architecture.jpg)
+![Arquitetura do Projeto](./assets/images/arch-ms.jpeg)
+
+## 🧪 Testes:
+- Evidência cobertura de testes unitários
+![Image](./assets/images/unit-test.png)
+  ```bash
+  npm run test:coverage
+  ```
+
+- Evidência teste BDD
+![Image](./assets/images/BDD-products.png)
+  ```bash
+  npm run test:bdd
+  ```
+---
 
 ## ▶️ Executando o projeto
 - Execute os seguintes comandos:
@@ -51,18 +65,6 @@ Existe o arquivo `.env.example` com todas as variáveis utilizadas para rodar o 
 ## 🧩 Swagger
 É possível acessar a documentação da API pelo [Swagger da API](http://localhost:3000/api-docs) e simular os endpoints
 
----
-
-## ▶️ Vídeo do Projeto
-Link do vídeo no [Youtube](https://youtu.be/TDvxi906vco?si=yY3aulSxq2tg5fiC)
-
----
-
-## 🧪 Testes:
-- Rodar todos os testes
-  ```bash
-  npm t
-  ```
 ---
 
 ## 🚀 Commits no projeto
