@@ -59,12 +59,12 @@ Foi escolhido o padrão SAGA sem um orquestrador devido às seguintes razões:
 Os relatórios de segurança gerados pelo OWASP ZAP estão disponíveis nos links abaixo:
 
 - Produtos
-  - [Relatório antes das correções](./assets/reports/products/before-product-ms.html)
-  - [Relatório após as correções](./assets/reports/products/after-product-ms.html)
+  - [Relatório antes das correções](https://fiap-soat-g19.github.io/owasp-zap/before-product-ms.html)
+  - [Relatório após as correções](https://fiap-soat-g19.github.io/owasp-zap/after-product-ms.html)
 
 - Produção
-  - [Relatório antes das correções](./assets/reports/production/2024-06-21-ZAP-Report-localhost.html)
-  - [Relatório após as correções](./assets/reports/production/after-production-ms.html)
+  - [Relatório antes as correções](https://fiap-soat-g19.github.io/owasp-zap/2024-06-21-ZAP-Report-localhost.html)
+  - [Relatório após das correções](https://fiap-soat-g19.github.io/owasp-zap/after-production-ms.html)
 
 - Pagamentos
   - [Link Discord](https://discord.com/channels/1065992165232214066/1257387783123767317) - Postamos essa dúvida: Temos um micro serviço que executa como um worker, ele pluga em uma fila sqs e processa a partir disso. Pelas aulas vimos que o OWASP ZAP, é executa a partir de rotas HTTP. Recebemos o retorno: pela definição o OWASP ZAP é um web scanner.Não existe outra alternativa, não precisa efetuar os testes nesse ponto específico.
