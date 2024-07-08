@@ -1,51 +1,39 @@
-# 💬 Tech Challenge - Microserviço de Produtos
+# Tech Challenge - Grupo 19
 
-## ✳️ Sobre
 O **Tech Challenge** é um projeto de um sistema de autoatendimento de fast food, que é composto por uma série de dispositivos e interfaces que permitem aos clientes selecionar e fazer pedidos sem precisar interagir com um atendente.
 
 
----
+## Integrantes
 
-## 🛠 Ferramentas Utilizadas
-- [Node](https://nodejs.dev)
-- [Express](https://expressjs.com/pt-br/)
-- [PostgreSQL](https://www.postgresql.org/)
-- [Prisma](https://www.prisma.io/)
-- [Jest](https://jestjs.io)
-- [k8s](https://kubernetes.io/pt-br/)
----
+- [@filipedev040990](https://www.github.com/filipedev040990) - Filipe Siqueira
+- [@repRSilva](https://www.github.com/repRSilva) - Rafael Silva
+- [@rodrigodos-santos](https://www.github.com/rodrigodos-santos) - Rodrigo dos Santos
+- [@me-marchi](https://www.github.com/me-marchi) - Maria Eduarda Marchi
+- [@vanessalimaf](https://www.github.com/vanessalimaf) - Vanessa Lima
 
-## 💻 Clonando o repositório
+## Repositórios Relacionados
 
-- Clone o projeto
+Este projeto faz parte de um ecossistema maior de repositórios. Aqui está a lista de repositórios relacionados:
 
-  ```bash
-  git clone https://github.com/FIAP-SOAT-G19/products-microservice.git
-  ````
----
+1. **[Repositório de Infraestrutura](https://github.com/FIAP-SOAT-G19/tech-challenge-iac)** - Contém o código-fonte relacionado a construção de toda a infra da aplicação com Terraform.
+2. **[Repositório de Autenticação](https://github.com/FIAP-SOAT-G19/lambda)** - Código-fonte relacionado a autenticação da aplicação com lambda.
+3. **[Repositório de Produtos](https://github.com/FIAP-SOAT-G19/products-microservice)** - Código-fonte relacionado ao catálogo de produtos.
+4. **[Repositório de Cadastros](https://github.com/FIAP-SOAT-G19/registrations-microservice)** - Código-fonte relacionado ao cadastro de funcionários e clientes.
+5. **[Repositório de Pedidos](https://github.com/FIAP-SOAT-G19/order-microsservice)** - Código-fonte relacionado ao pedido.
+6. **[Repositório de Pagamentos](https://github.com/FIAP-SOAT-G19/payments-microsservice)** - Código-fonte relacionado ao processamento de pagamentos, este microserviço está relacionado ao microserviço que faz o decrypt dos dados do cartão de crédito.
+7. **[Repositório Encryptor](https://github.com/FIAP-SOAT-G19/card-encryptor-microsservice)** - Código-fonte utilizado para encryptar e desencryptar dados dos cartões de crédito.
+8. **[Repositório de Produção](https://github.com/FIAP-SOAT-G19/production-microservice)** - Código-fonte relacionado a produção dos pedidos.
 
-## 🏠 Adicionando variáveis de ambiente (.env)
-Existe o arquivo `.env.example` com todas as variáveis utilizadas para rodar o sistema. Faça uma cópia desse arquivo e renomeie a cópia para `.env` antes de executar o comando para iniciar a aplicação.
----
 
-## Arquitetura do projeto
-![Arquitetura do Projeto](./assets/images/arch-ms.jpeg)
+## Sumário
+1. [Instruções para Rodar a Aplicação](#instruções-para-rodar-a-aplicação)
+2. [Justificativa do Padrão SAGA](#justificativa-do-padrão-saga)
+3. [Relatórios OWASP ZAP](#relatórios-owasp-zap)
+4. [Relatório RIPD](#relatório-ripd)
+5. [Desenho da Arquitetura](#desenho-da-arquitetura)
+6. [Vídeo Explicativo](#vídeo-explicativo)
 
-## 🧪 Testes:
-- Evidência cobertura de testes unitários
-![Image](./assets/images/unit-test.png)
-  ```bash
-  npm run test:coverage
-  ```
-
-- Evidência teste BDD
-![Image](./assets/images/BDD-products.png)
-  ```bash
-  npm run test:bdd
-  ```
----
-
-## ▶️ Executando o projeto
+## Instruções para Rodar a Aplicação
 - Execute os seguintes comandos:
   ```bash
     kubectl apply -f k8s/db-deployment.yaml
@@ -59,43 +47,36 @@ Existe o arquivo `.env.example` com todas as variáveis utilizadas para rodar o 
     kubectl port-forward service/database-svc 5432:5432 &
   ```
 
-- O Backend iniciará em [http://localhost:3000](http://localhost:3000)
+## Justificativa do Padrão SAGA
 
----
+Foi escolhido o padrão SAGA sem um orquestrador devido às seguintes razões:
+- **Simplicidade:** A implementação direta do padrão SAGA sem um orquestrador reduz a complexidade e facilita a manutenção do código.
+- **Desempenho:** Sem um orquestrador intermediário, as comunicações entre serviços podem ser mais rápidas e eficientes.
+- **Flexibilidade:** Permite maior flexibilidade na implementação das transações, adaptando-se melhor às necessidades específicas do projeto.
 
-## 🧩 Swagger
-É possível acessar a documentação da API pelo [Swagger da API](http://localhost:3000/api-docs) e simular os endpoints
+## Relatórios OWASP ZAP
 
----
+Os relatórios de segurança gerados pelo OWASP ZAP estão disponíveis nos links abaixo:
 
-## 🚀 Commits no projeto
+- Produtos
+  - [Relatório antes das correções](https://fiap-soat-g19.github.io/owasp-zap/before-product-ms.html)
+  - [Relatório após as correções](https://fiap-soat-g19.github.io/owasp-zap/after-product-ms.html)
 
-O projeto possui [husky](https://github.com/typicode/husky) para verificar alguns passos antes de autorizar o commit.
+- Produção
+  - [Relatório antes as correções](https://fiap-soat-g19.github.io/owasp-zap/2024-06-21-ZAP-Report-localhost.html)
+  - [Relatório após das correções](https://fiap-soat-g19.github.io/owasp-zap/after-production-ms.html)
 
-1. Aplicar correções relacionadas à **Lint**;
-3. Validação da mensagem de commit conforme as regras do [conventional-commits](https://www.conventionalcommits.org/en/v1.0.0/);
-  - Padrão no desenvolvimento de um card:
-  > tipo(#numero_do_card): descrição em inglês (em letras minúsculas)
-  - Padrão de desenvolvimento não relacionado a cards
-  > tipo(escopo): descrição em inglês (em letras minúsculas)
+- Pagamentos
+  - [Link Discord](https://discord.com/channels/1065992165232214066/1257387783123767317) - Postamos essa dúvida: Temos um micro serviço que executa como um worker, ele pluga em uma fila sqs e processa a partir disso. Pelas aulas vimos que o OWASP ZAP, é executa a partir de rotas HTTP. Recebemos o retorno: pela definição o OWASP ZAP é um web scanner.Não existe outra alternativa, não precisa efetuar os testes nesse ponto específico.
 
-Exemplos de tipos:
-  - feat: introduz uma nova funcionalidade à base de código;
-  - fix: correção de um bug na base de código;
-  - build: Introduz uma mudança que afeta o build do sistema ou alguma dependência externa (exemplos de escopos: gulp, broccoli, npm);
-  - chore: atualização de ferramentas, configurações e bibliotecas
-  - ci: Introduz uma mudança aos arquivos e scripts de configuração do CI/CD (exemplos de escopos: Travis, Circle, BrowserStack, SauceLabs)
-  - docs: Alterações na documentação
-  - style: Introduz uma mudança que não afeta o significado do código (remoção de espaços em branco, formatação, ponto e virgula faltando, etc)
-  - refactor: Uma mudança no código que nem corrige um bug nem adiciona uma nova funcionalidade
-  - perf: Um mundança no código que melhora a performance
-  - test: Adicionar testes faltando ou corrigir testes existentes
+## Relatório RIPD
 
-Exemplos de commits válidos:
-  ```bash
-  git commit -m "feat(#300): creating auth service"
-  git commit -m "fix(#30): correcting product type"
-  git commit -m "style(lint): removing some lint warnings"
-  git commit -m "docs(readme): removing deploy section from readme"
-  ```
----
+O Relatório de Impacto de Proteção de Dados (RIPD) pode ser acessado no link a seguir:
+- [Relatório RIPD](./assets/reports/RIPD-Grp19.pdf)
+
+## Desenho da Arquitetura
+![Arquitetura do Projeto](./assets/images/final-arch.jpg)
+
+## Vídeo Explicativo
+
+Assista ao vídeo explicativo do projeto clicando [aqui](https://link-para-o-video-explicativo).
