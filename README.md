@@ -52,7 +52,7 @@ Este projeto faz parte de um ecossistema maior de repositórios. Aqui está a li
 Foi escolhido o padrão SAGA sem um orquestrador devido às seguintes razões:
 - **Simplicidade:** A implementação direta do padrão SAGA sem um orquestrador reduz a complexidade e facilita a manutenção do código.
 - **Desempenho:** Sem um orquestrador intermediário, as comunicações entre serviços podem ser mais rápidas e eficientes.
-- **Flexibilidade:** Permite maior flexibilidade na implementação das transações, adaptando-se melhor às necessidades específicas do projeto.
+- **Flexibilidade:** Permite maior flexibilidade na implementação das transações, adaptando-se melhor às necessidades específicas do projeto
 
 ## Relatórios OWASP ZAP
 
