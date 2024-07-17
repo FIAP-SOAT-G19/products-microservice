@@ -79,4 +79,4 @@ O Relatório de Impacto de Proteção de Dados (RIPD) pode ser acessado no link 
 
 ## Vídeo Explicativo
 
-Assista ao vídeo explicativo do projeto clicando [aqui](https://link-para-o-video-explicativo).
+Assista ao vídeo explicativo do projeto clicando [aqui](https://youtu.be/iJ0IAZHSmN8?si=N8btjMlgCpygqIo_).
