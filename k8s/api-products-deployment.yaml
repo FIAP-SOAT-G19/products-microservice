@@ -1,30 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-deployment
+  name: api-products-deployment
 spec:
   selector:
     matchLabels:
-      app: api
+      app: api-products
   template:
     metadata:
       labels:
-        app: api
+        app: api-products
     spec:
       containers:
-        - name: api
+        - name: api-products-deployment
           image: devrsilva/products-microsservice
           resources:
             limits:
               memory: "512Mi"
               cpu: "500m"
           ports:
-            - containerPort: 3000
+            - containerPort: 3005
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /api/v1/livenessProbe
-              port: 3000
+              port: 3005
             initialDelaySeconds: 15
             periodSeconds: 10
             successThreshold: 1
@@ -33,7 +33,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /api/v1/readinessProbe
-              port: 3000
+              port: 3005
             initialDelaySeconds: 15
             periodSeconds: 10
             successThreshold: 1
@@ -43,38 +43,43 @@ spec:
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
-                  name: api-secrets
+                  name: api-products-secrets
                   key: database-url
             - name: POSTGRES_HOST
               valueFrom:
                 secretKeyRef:
-                  name: api-secrets
+                  name: api-products-secrets
                   key: postgres-host
             - name: POSTGRES_DB
               valueFrom:
                 secretKeyRef:
-                  name: api-secrets
+                  name: api-products-secrets
                   key: postgres-db
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
-                  name: api-secrets
+                  name: api-products-secrets
                   key: postgres-user
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: api-secrets
+                  name: api-products-secrets
                   key: postgres-password
+            - name: PORT
+              valueFrom:
+                secretKeyRef:
+                  name: api-products-secrets
+                  key: port
 ---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: api-hpa
+  name: api-products-hpa
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: api-deployment
+    name: api-products-deployment
   minReplicas: 1
   maxReplicas: 10
   metrics:
@@ -88,25 +93,26 @@ spec:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: api-secrets
+  name: api-products-secrets
 type: Opaque
 stringData:
   postgres-db: products
   postgres-user: postgres
   postgres-password: postgres
-  postgres-host: products.c32kogqu0ihz.us-east-1.rds.amazonaws.com
-  database-url: postgresql://postgres:postgres@products.c32kogqu0ihz.us-east-1.rds.amazonaws.com:5432/products?schema=public
+  postgres-host: products.czg2ea2yu0rz.us-east-1.rds.amazonaws.com
+  database-url: postgresql://postgres:postgres@products.czg2ea2yu0rz.us-east-1.rds.amazonaws.com:5432/products?schema=public
+  port: '3005'
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: api-svc
+  name: api-products-svc
 spec:
   selector:
-    app: api
+    app: api-products
   ports:
     - protocol: TCP
-      port: 3000
-      targetPort: 3000
-      nodePort: 30000
+      port: 3005
+      targetPort: 3005
+      nodePort: 30005
   type: LoadBalancer
